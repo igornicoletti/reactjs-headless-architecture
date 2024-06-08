@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react'
 
-export const UseFetch = <T>(url: string) => {
-  const [response, setResponse] = useState<T>()
+export type Props = {
+  id: string
+  name: string
+}
+
+export const UseFetch = (url: string) => {
+  const [response, setResponse] = useState<Props[]>([])
   const [error, setError] = useState<unknown>()
 
   useEffect(() => {
